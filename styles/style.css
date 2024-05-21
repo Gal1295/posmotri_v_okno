@@ -138,7 +138,7 @@ ol {
   border-bottom: 1px solid #fff;
   padding: 2px 0;
 }
-.search-form__label:active {
+.search-form__textfield:active {
   outline: 1px solid #fff;
 }
 .search-form__textfield:focus {
