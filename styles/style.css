@@ -9,6 +9,7 @@ html {
 .page {
   display: flex;
   align-items: center;
+  justify-content: center;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -45,18 +46,17 @@ ol {
 }
 .content {
   display: flex;
-  margin: 0 30px;
-  justify-content: center;
   gap: 30px;
   width: 100%;
   inline-size: 1140px;
+  align-items: flex-end;
 }
 .result {
   display: flex;
   flex-direction: column;
-  margin-top: 75px;
 }
 .result__video-container {
+  position: relative;
   height: 386px;
   inline-size: 711px;
   margin-bottom: 16px;
@@ -70,7 +70,7 @@ ol {
 .search-form {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 .search-form__fieldset {
   display: flex;
@@ -82,10 +82,17 @@ ol {
 .search-form__fieldset-title {
   font-weight: 400;
   font-size: 18px;
+  font-family: "Fira Sans Condensed", sans-serif;
+  color: #fff;
+  font-style: normal;
+  line-height: 22px;
 }
 .search-form__checkbox-list {
   display: flex;
   gap: 16px;
+}
+.search-form__checkbox-list:focus-visible {
+  outline: none;
 }
 .search-form__pseudo-checkbox {
   display: inline-block;
@@ -115,6 +122,10 @@ ol {
   font-weight: 400;
   font-size: 18px;
 }
+.search-form__label:active {
+  outline: 1px solid;
+  text-decoration: none;
+}
 .search-form__label:hover .search-form__label-text {
   text-decoration: underline;
 }
@@ -134,12 +145,15 @@ ol {
   background-color: transparent;
   color: rgba(255, 255, 255, 0.7);
   width: 225px;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-  padding: 2px 0;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: start;
+  border-width: 1px 0px;
+  border-style: solid;
+  border-color: #ffffff;
 }
 .search-form__textfield:active {
-  outline: 1px solid #fff;
+  outline: 1px solid #fff;
 }
 .search-form__textfield:focus {
   outline: none;
@@ -173,35 +187,46 @@ ol {
   position: relative;
   flex-direction: column;
   block-size: 298px;
+  width: 399px;
   overflow: auto;
   scroll-behavior: smooth;
+}
+.content__list-item:focus-visible,
+.content__list:focus-visible {
+  outline: none;
 }
 .content__card-link {
   display: block;
   text-decoration: none;
   color: #fff;
+  margin: 2px;
 }
 .content__list-item:not(:last-child) {
   margin-bottom: 30px;
 }
-.content__list-item:active {
+.content__card-link:active {
   background: #545050;
 }
-.content__list-item:hover .content__video-card-title,
-.content__list-item:hover .content__video-card-description {
-  text-decoration: underline;
+.content__card-link_current,
+.content__card-link_current:active {
+  background: #545050;
 }
-.content__list-item:focus {
+.content__card-link:hover,
+.content__card-link_current:hover {
+  text-decoration-line: underline;
+}
+.content__card-link:focus,
+.content__card-link_current:focus {
   outline: none;
 }
-.content__list-item:focus-visible {
+.content__card-link:focus-visible,
+.content__card-link_current:focus-visible {
   outline: 1px solid #fff;
   outline-offset: 1px;
 }
 .content__video-card {
   display: flex;
-  justify-content: space-between;
-  justify-self: flex-start;
+  flex-direction: row;
   align-items: flex-start;
   font-family: "Oswald", sans-serif;
   font-style: normal;
@@ -211,11 +236,13 @@ ol {
   padding: 2px;
 }
 .content__video-card-description-container {
-  width: 100%;
+  flex-grow: 1;
   height: 100%;
+  max-width: 198px;
+  padding-bottom: 2px;
 }
 .content__video-card-title {
-  font-family: inherit;
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-size: 30px;
   font-weight: 700;
@@ -232,6 +259,7 @@ ol {
   line-height: 90%;
   font-style: normal;
   font-family: "Fira Sans Condensed", sans-serif;
+  color: currentColor;
 }
 .content__video-card-thumbnail {
   width: 194px;
@@ -257,7 +285,7 @@ ol {
   border: 1px solid currentColor;
 }
 .more-button {
-  width: 399px;
+  width: 100%;
 }
 .button:active {
   background-color: #545050;
@@ -270,7 +298,7 @@ ol {
 }
 .button:focus-visible {
   outline: 1px solid #fff;
-  outline-offset: 2px;
+  outline-offset: -3px;
 }
 .result__video-container {
   position: relative;
