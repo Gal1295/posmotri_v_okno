@@ -122,6 +122,9 @@ ol {
   font-weight: 400;
   font-size: 18px;
 }
+.search-form_label:not(:has(.search-form_textfield)):active {
+  text-decoration: none;
+}
 .search-form__label:active {
   outline: 1px solid;
   text-decoration: none;
@@ -132,7 +135,7 @@ ol {
 .search-form__label:focus {
   outline: none;
 }
-.search-form__label:hover {
+.search-form_label:not(:has(.search-form_textfield)):hover {
   text-decoration: underline 1px #fff;
   text-underline-offset: 3px;
 }
@@ -190,6 +193,7 @@ ol {
   width: 399px;
   overflow: auto;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 .content__list-item:focus-visible,
 .content__list:focus-visible {
@@ -238,7 +242,7 @@ ol {
 .content__video-card-description-container {
   flex-grow: 1;
   height: 100%;
-  max-width: 198px;
+  max-width: 190px;
   padding-bottom: 2px;
 }
 .content__video-card-title {
